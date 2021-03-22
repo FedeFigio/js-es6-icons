@@ -7,19 +7,11 @@
 // Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 
 $(document).ready(function() {
+    showIcon(orderIcons)
 
     $("select").change(function(e) {
-
         var userSelect = $(this).val();
-        if (userSelect == "animals") {
-            showIcon(animals)
-        } else if (userSelect == "users") {
-            showIcon(users)
-        } else if (userSelect == "vegetables") {
-            showIcon(vegetables)
-        } else {
-            showIcon(orderIcons)
-        }
+        filter(userSelect)
     });
 });
 
@@ -133,6 +125,7 @@ function showIcon(type) {
     let iconsEl = $("#icons")
 
     iconsEl.html("")
+
     type.forEach(el => {
         let color;
         if (el.type == "animal") {
@@ -144,5 +137,22 @@ function showIcon(type) {
         }
         iconsEl.append(`<li><i class="${el.family} ${el.prefix}${el.name} ${color}"></i> <span>${el.name}</span></li>`);
     });
+}
 
+function filter(x) {
+
+    switch (x) {
+        case "animals":
+            showIcon(animals);
+            break;
+        case "vegetables":
+            showIcon(vegetables);
+            break;
+        case "users":
+            showIcon(users);
+            break;
+        default:
+            showIcon(orderIcons);
+            break;
+    }
 }
