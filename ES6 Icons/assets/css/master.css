@@ -7,27 +7,38 @@
 
 body {
     background-color: rgb(233, 233, 233);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    margin: 20px;
+    font-size: 20px;
 }
 
 ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 li {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 120px;
     height: 60px;
-    border: 1px solid black;
+    -webkit-box-shadow: 5px 5px 3px -3px rgba(65, 65, 65, 0.73);
+    box-shadow: 5px 5px 3px -3px rgba(85, 85, 85, 0.73);
     margin: 20px;
     border-radius: 10px;
     background-color: whitesmoke;
 }
 
 i {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .blue {

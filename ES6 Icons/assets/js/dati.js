@@ -142,7 +142,7 @@ function showIcon(type) {
         } else {
             color = "purple"
         }
-        iconsEl.append(`<li><i class="${el.family} ${el.prefix}${el.name} ${color}"></i></li>`);
+        iconsEl.append(`<li><i class="${el.family} ${el.prefix}${el.name} ${color}"></i> <span>${el.name}</span></li>`);
     });
 
 }
